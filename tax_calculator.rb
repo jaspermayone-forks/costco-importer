@@ -42,6 +42,8 @@ class TaxCalculator
       @date.before?(Date.new(2024, 1, 1)) ? 0.1025 : 0.1035
     when 6, 95 # Tukwila, Tacoma
       0.101
+    when 8 # Kirkland
+      0.103
     when 1190 # Lynnwood
       0.106
     when 106 # Aurora Village
@@ -55,7 +57,7 @@ class TaxCalculator
     return 0 unless taxable?
 
     case @warehouse_number
-    when 1 # Seattle
+    when 1, 8 # Washington (Seattle, Kirkland)
       0.205
     else
       warn ArgumentError, "Unknown warehouse number \"#{@warehouse_number}\". I'm not sure how to calculate spirits tax for this location"
