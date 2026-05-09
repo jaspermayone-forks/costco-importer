@@ -48,6 +48,8 @@ class TaxCalculator
       0.106
     when 106 # Aurora Village
       0.104
+    when 639 # Sequim
+      0.089
     else
       warn ArgumentError, "Unknown warehouse number \"#{@warehouse_number}\". I'm not sure how to calculate sales tax for this location"
     end
