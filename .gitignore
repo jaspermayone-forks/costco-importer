@@ -6,4 +6,5 @@
 
 # Build
 /data
+!/data/README.md
 /output
